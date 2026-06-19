@@ -1,6 +1,6 @@
 # 全局唯一事实源 — Canonical Decisions (OPi5 Mainline)
 
-> 最后更新：2026-06-10
+> 最后更新：2026-06-19
 > 用途：本文件是全部文档的共同事实源。`README.md`、`docs/00_README.md`、`CLAUDE.md` 与 Task 文档必须与本文件保持一致。
 
 ## 0. 当前状态
@@ -9,6 +9,7 @@
 - **当前分支**：`migration/imx6ull-opi5-edge-ai`
 - **当前有效代码模块**：`edge/opi5-controller`, `edge/opi5-ai`, `edge/opi5-device-agent`, `server/backend`, `server/frontend`
 - **i.MX6ULL / STM32 / ESP32-CAM**：历史阶段，已归档到 `docs/archive/` 和 `legacy/`
+- **2026-06-19 口语文档人机感优化**：全面审计并重构了口语文档 `DEEP_INTERVIEW_SPOKEN_ANSWERS.md`，彻底消除了机器生成感和过度防守，实现自然且技术自信的口头表达，保证数据和边界绝对符合事实源。
 
 ## 1. 运行时架构
 
