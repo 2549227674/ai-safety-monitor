@@ -22,6 +22,7 @@ captures/
 *.jpg
 *.jpeg
 *.png
+!多模态设备安全巡检/*.png
 *.mp4
 *.avi
 
@@ -71,3 +72,7 @@ firmware/stm32/SafetyMonitor/MDK-ARM/Listings/
 .vscode/
 .idea/
 server/backend/notification_config.json
+
+# Local interview archives
+_local_archive/interview/
+
