@@ -122,7 +122,7 @@ C 语言编写的 `opi5_safetyd` 运行一个有限状态机。状态转换受�
 *图 4-2：C语言控制核心进程 `opi5_safetyd` 的主循环逻辑图*
 
 1. **本地评分计算**：
-   $$\text{risk\_score} = \text{clamp}(\text{PIR} \times 2 + \text{MQ2} \times 5 + \text{Flame} \times 6 + \text{AI\_Risk} \times \text{weight}, 0, 10)$$
+   $$\text{Risk Score} = \text{clamp}(\text{PIR} \times 2 + \text{MQ2} \times 5 + \text{Flame} \times 6 + \text{AI Risk} \times \text{weight}, 0, 10)$$
 2. **AI 隔离原则**：AI 服务的决策置信度只作为 `ai_adjust` 调节加分。如果 AI 通信超时或崩溃，系统扣减 AI 分数但绝不降低本地传感器的评分，保证本地强证据不被 AI 离线“掩盖”。
 3. **本地降级与 spool**：若 Flask 后端无法连通，事件数据将被序列化并缓存在本地 `/opt/spool/` 目录下，并在网络恢复后以 FIFO 队列进行 flush 补发。
 
@@ -145,7 +145,7 @@ C 语言编写的 `opi5_safetyd` 运行一个有限状态机。状态转换受�
 *图 5-2：执行器喷淋动作 of AND 门控双重确认逻辑*
 
 - **AND 门控**：
-  $$\text{Activate\_Pump} = \text{Local\_Flame\_Alarm} \land \text{AI\_Flame\_Detected} \land \text{Threshold\_Enabled}$$
+  $$\text{Activate Pump} = \text{Local Flame Alarm} \land \text{AI Flame Detected} \land \text{Threshold Enabled}$$
   只有当本地光敏火焰传感器输出低电平（有明火）且 Qwen3-VL 在抓拍画面中置信度达标，同时用户在云端启用了双确认联锁时，控制信号才会被送往 GPIO138。
 - **保护电路与限时冷却**：为防止水泵持续抽水导致淹溢，C 程序内置了 `max_pump_duration`（例如单次连续喷淋不得超过 10 秒），并在喷淋结束后强制进入 `cooldown_seconds`（例如冷却期 30 秒）进行冷却保护。
 
