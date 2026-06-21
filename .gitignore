@@ -76,3 +76,9 @@ server/backend/notification_config.json
 # Local interview archives
 _local_archive/interview/
 
+# Claude Code execution files and task index
+CLAUDE_CODE_EXECUTION_GUIDE.md
+CLAUDE_CODE_TASK_*.md
+CLAUDE_CODE_TODO_INDEX.md
+CROSS_FILE_CONSISTENCY_REPORT.md
+
