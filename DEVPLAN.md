@@ -19,6 +19,7 @@ OPi5 一板主控完成本地安全闭环 + AI 推理 + 设备管理 + Flask/Rea
 | 前后端/device-agent 字段对齐 | 已完成 | heartbeat/telemetry/通知字段三方一致（`126e2ce` + `7289b1d`） |
 | 前端真实数据联调 | 已完成 | mock/real mode 正常，camera_status/video_mode 对齐 |
 | mock/seed 数据链路验证 | 已完成 | 无设备时可演示 telemetry/AI/通知 |
+| 口语文档人机感优化 | 已完成 | 重构并打磨 DEEP_INTERVIEW_SPOKEN_ANSWERS.md，消除机器腔、过度防守，实现自然口语化回答 |
 
 ### 下一步
 
